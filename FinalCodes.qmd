@@ -41,3 +41,21 @@ Error: 'Trimmed Down Durham Schools.xlsx - Sheet1.csv' does not exist in current
 |     |                                                           |
 |----:|-----------------------------------------------------------|
 | 1\. | read_csv("Trimmed Down Durham Schools.xlsx - Sheet1.csv") |
+
+```{r}
+colnames(data)
+```
+
+```{r}
+data$Library_Y <- ifelse(data$'Library Distance' == "Y", 1, 0)
+```
+
+```{r}
+data$Police_Response_Y <- ifelse(data$`Police Response` == "Y", 1, 0)
+```
+
+```{r}
+data <- within(data, {  category_code_E <- ifelse(category_code == "E", 1, 0)
+  category_code_H <- ifelse(category_code == "H", 1, 0)
+  category_code_M <- ifelse(category_code == "M", 1, 0)})
+```
