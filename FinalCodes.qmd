@@ -74,3 +74,21 @@ summary(model2)
 model3 <- lm(Library_Y ~ Grade + category_code_E + category_code_M + Police_Response_Y, data = data)
 summary(model3)
 ```
+
+```{r}
+model_lpm <- lm(Library_Y ~ Grade, data = data)
+summary(model_lpm)
+```
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+ggplot(data, aes(x = Grade, y= Library_Y)) +
+  geom_point() +
+  geom_smooth() +
+  labs(title = "Linear Probability Model: School Grade vs. Library Within Walking Distance", 
+       x= 'School Grade',
+       y = "Library Within Walking Distance (Y=1, N=0)")
+```
