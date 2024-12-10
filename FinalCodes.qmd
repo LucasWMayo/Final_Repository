@@ -59,3 +59,18 @@ data <- within(data, {  category_code_E <- ifelse(category_code == "E", 1, 0)
   category_code_H <- ifelse(category_code == "H", 1, 0)
   category_code_M <- ifelse(category_code == "M", 1, 0)})
 ```
+
+```{r}
+model1 <- lm(Library_Y ~ Grade, data = data)
+summary(model1)
+```
+
+```{r}
+model2 <- lm(Library_Y ~ Grade + category_code_E + category_code_M + category_code_H, data = data)
+summary(model2)
+```
+
+```{r}
+model3 <- lm(Library_Y ~ Grade + category_code_E + category_code_M + category_code_H + Police_Response_Y, data = data)
+summary(model3)
+```
