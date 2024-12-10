@@ -66,11 +66,11 @@ summary(model1)
 ```
 
 ```{r}
-model2 <- lm(Library_Y ~ Grade + category_code_E + category_code_M + category_code_H, data = data)
+model2 <- lm(Library_Y ~ Grade + category_code_E + category_code_M, data = data)
 summary(model2)
 ```
 
 ```{r}
-model3 <- lm(Library_Y ~ Grade + category_code_E + category_code_M + category_code_H + Police_Response_Y, data = data)
+model3 <- lm(Library_Y ~ Grade + category_code_E + category_code_M + Police_Response_Y, data = data)
 summary(model3)
 ```
